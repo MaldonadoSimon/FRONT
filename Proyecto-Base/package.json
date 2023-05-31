@@ -18,8 +18,16 @@
     "@angular/platform-browser": "^15.2.0",
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
+    "bootstrap-banmedica": "^2.1.8",
+    "guid-ts": "^1.1.2",
+    "isapre-digital": "^0.5.7",
+    "momento": "^0.2.0",
+    "ng-son-of-pandora": "^1.2.8",
+    "ng2-rut": "^0.3.2",
+    "ngx-bootstrap": "^10.2.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "typescript-compiler": "^1.4.1-2",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {

@@ -1,0 +1,4 @@
+<h3>Paginator</h3>
+<app-mxdev></app-mxdev>
+<id-pager [totalItems]="100" [perPage]="10" (pageChange)="onPageChange($event)"></id-pager>
+{{page | json}}

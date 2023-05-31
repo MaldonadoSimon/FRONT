@@ -1,0 +1,6 @@
+<h3>carrusel beneficiaries</h3>
+<app-mxdev></app-mxdev>
+<id-carousel [ui]="carouselUi" [dataEntry]="carouselData" (dataOutput)="selected($event)"></id-carousel>
+
+<br>
+{{beneficiarySelected | json}}

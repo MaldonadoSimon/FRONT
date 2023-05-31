@@ -1,0 +1,6 @@
+<h3>Calendar</h3>
+<app-mxdev></app-mxdev>
+
+<id-calendar [ui]="calendarUi" (dataOutput)="getCalendarData($event)"></id-calendar>
+<br>
+<h5>{{output | json}}</h5>

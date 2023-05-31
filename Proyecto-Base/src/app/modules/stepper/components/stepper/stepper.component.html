@@ -1,0 +1,8 @@
+<h3>Stepper</h3>
+<app-mxdev></app-mxdev>
+<id-stepper [ui]="ui" [steps]="steps" (dataOutput)="getActiveStep($event)"></id-stepper>
+<br>
+<button (click)="prevStep()">Retroceder</button>
+<button (click)="nextStep()">Avanzar</button>
+<br>
+{{'Paso seleccionado' + selected | json}}

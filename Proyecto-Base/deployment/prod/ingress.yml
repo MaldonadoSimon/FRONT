@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    created.by: Symintelligent
+    support: soporte@symintelligent.com
+  name: ${moduleName}
+  labels:
+      app: ${moduleName}
+      env: ${environment}
+      app.kubernetes.io/name: ${moduleName}
+      app.kubernetes.io/version: v1.0
+      app.kubernetes.io/component: Web
+      app.kubernetes.io/part-of: bm
+      app.kubernetes.io/managed-by: devops
+spec:
+  tls:
+  - hosts:
+      - ${RUTA}
+    secretName: app-banmedica-tls
+  rules:
+  - host: ${RUTA}
+    http:
+      paths:
+      - path: ${PATH}
+        backend:
+          serviceName: ${moduleName}
+          servicePort: ${port}

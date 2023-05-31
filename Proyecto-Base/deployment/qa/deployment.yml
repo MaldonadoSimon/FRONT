@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    created.by: Symintelligent
+    support: soporte@symintelligent.com
+  labels:
+    app: ${moduleName}
+    env: ${environment}
+    app.kubernetes.io/name: ${moduleName}
+    app.kubernetes.io/version: v1.0
+    app.kubernetes.io/component: Web
+    app.kubernetes.io/part-of: bm
+    app.kubernetes.io/managed-by: devops
+  name: ${moduleName}
+  namespace: ${namespace}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ${moduleName}
+  template:
+    metadata:
+      annotations:
+        created.by: Symintelligent
+        support: soporte@symintelligent.com
+      labels:
+        app: ${moduleName}
+        env: ${environment}
+        app.kubernetes.io/name: ${moduleName}
+        app.kubernetes.io/version: v1.0
+        app.kubernetes.io/component: Web
+        app.kubernetes.io/part-of: bm
+        app.kubernetes.io/managed-by: devops
+    spec:
+      containers:
+        - image: docker-registry.default.svc:5000/${namespace}/${moduleName}:v${buildNumber}
+          imagePullPolicy: Always
+          name: app
+          ports:
+            - containerPort: ${containerPort}
+              protocol: TCP
+          livenessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            successThreshold: 1
+            tcpSocket:
+              port: ${livenessProbetcpSocketPort}
+            timeoutSeconds: 15
+          readinessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            tcpSocket:
+              port:  ${readinessProbetcpSocketPort}
+            timeoutSeconds: 10

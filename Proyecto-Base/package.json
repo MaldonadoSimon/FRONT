@@ -35,6 +35,7 @@
     "bootstrap-banmedica": "^2.1.8",
     "guid-ts": "^1.1.2",
     "isapre-digital": "^0.5.7",
+    "moment": "^2.29.4",
     "momento": "^0.2.0",
     "ng-son-of-pandora": "^1.2.8",
     "ng2-rut": "^0.3.2",
